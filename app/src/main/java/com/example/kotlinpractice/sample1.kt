@@ -59,3 +59,18 @@ fun checkNum(score: Int) {
         else -> println("Cheer up!")
     }
 }
+
+//5. Array vs List
+fun array() {
+    val array = arrayOf(1, 2, 3)
+    val list = listOf(1, 2, 3)
+
+    val array2 = arrayOf(1, "a", 3.14f)
+    val list2 = listOf(1, "a", 11L)
+
+    array[0] = 4
+    var result = list.get(0)
+    var arrayList = arrayListOf<Int>()
+    arrayList.add(10)
+    arrayList.add(20)
+}
