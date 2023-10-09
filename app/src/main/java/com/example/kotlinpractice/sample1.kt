@@ -1,7 +1,9 @@
 package com.example.kotlinpractice
 
+import androidx.compose.ui.text.toUpperCase
+
 fun main(){
-forAndWhile()
+ignoreNulls("john")
 }
 
 fun helloWorld() : Unit{
@@ -97,4 +99,36 @@ fun forAndWhile() {
         index++
     }
 
+}
+
+//7. NonNull/Nullable
+fun nullcheck() {
+    //NPE: Null pointer Exception
+
+    var name : String = "John" //null 불가
+    var nullName : String? = null //null 가능
+
+    var nameInUpperCase = name.toUpperCase()
+    var nullNameInUpperCase = nullName?.toUpperCase()
+
+    // ?: 엘비스 연산자
+
+    val lastName : String? = null
+    val fullName = name + " " + (lastName?: "NO lastName")
+    println(nameInUpperCase)
+    println(fullName)
+
+
+}
+//!! - 컴파일러에게 null이 아님을 보증함 따라서 컴파일러는 null이 들어올 가능성을 배제함
+fun ignoreNulls(str: String?) {
+    val mNotNull : String = str!!
+    val upper = mNotNull.toUpperCase()
+    println(upper)
+
+    //let
+    val email : String? = "abcd@naver.com"
+    email?.let{
+        println("My email is ${email}")
+    }
 }
