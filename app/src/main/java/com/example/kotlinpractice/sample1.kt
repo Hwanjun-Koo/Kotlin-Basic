@@ -1,7 +1,7 @@
 package com.example.kotlinpractice
 
 fun main(){
-checkNum(1)
+forAndWhile()
 }
 
 fun helloWorld() : Unit{
@@ -73,4 +73,28 @@ fun array() {
     var arrayList = arrayListOf<Int>()
     arrayList.add(10)
     arrayList.add(20)
+}
+
+//6. for/while
+fun forAndWhile() {
+    val students = arrayListOf("John", "James", "Tom", "Chris")
+    for (name in students) {
+        println("${name}")
+    }
+
+    for ((index, name) in students.withIndex()) {
+        println("${index + 1}번째 학생: ${name}")
+    }
+    var sum : Int = 0
+    for (i in 1 until 10) {
+        sum += i
+    }
+    println(sum)
+
+    var index = 0
+    while (index < 10) {
+        println("Current index : ${index}")
+        index++
+    }
+
 }
